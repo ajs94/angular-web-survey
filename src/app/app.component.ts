@@ -34,20 +34,5 @@ export class AppSurveyComponent {
 
   onRetake() {
     this.isComplete = false;
-
-    // clear the form values
-    this.submissionForm.setValue(
-      {
-        email: '',
-        name: '',
-        accomplishment: '',
-        superpower: '',
-        faveDrink: '',
-        faveSnacks: '',
-        favePeople: '',
-        shortGoals: '',
-        longGoals: ''
-      }
-    );
   }
 }
