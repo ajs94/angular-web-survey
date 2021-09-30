@@ -9,6 +9,10 @@ The survey portion should be complete minus a service call to a would-be API app
 # Running
 See package.json for dependencies. It should be pretty minimal but requires Node and Angular CLI installed.
 
+For installing Angular CLI if you have Node/NPM, you can run 'npm install -g @angular/cli'
+
+If that doesn't work, you can follow some of the setup documentation for Angular: https://angular.io/guide/setup-local
+
 Run 'npm install' from command line to get project dependencies.
 
 Run 'ng serve' to compile and run the code. Page will be hosted at localhost:4200
