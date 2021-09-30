@@ -1,0 +1,174 @@
+<div class="center-container">
+  <div *ngIf="!isComplete" class="center-text">
+    <form [formGroup]="submissionForm">
+      <div style="height: 500px;">
+        <mat-tab-group mat-stretch-tabs>
+          <!-- tab 1 -->
+          <mat-tab label="About Me">
+            <mat-toolbar>
+              <span class="center-text">Tell us about yourself!</span>
+            </mat-toolbar>
+
+            <mat-divider class="divider"></mat-divider>
+
+            <div class="input-container">
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>Email</mat-label>
+                <textarea matInput rows="1" placeholder="What email can we use for you?" formControlName="email"></textarea>
+              </mat-form-field>
+
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>Name</mat-label>
+                <textarea matInput rows="1" placeholder="What is your name?" formControlName="name"></textarea>
+              </mat-form-field>
+
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>What accomplishment are you really proud of?</mat-label>
+                <textarea matInput rows="2" placeholder="Your goals" formControlName="accomplishment"></textarea>
+              </mat-form-field>
+
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>What is your superpower?</mat-label>
+                <textarea matInput rows="1" placeholder="Your goals" formControlName="superpower"></textarea>
+              </mat-form-field>
+            </div>
+          </mat-tab>
+
+          <!-- tab 2 -->
+          <mat-tab label="Favorites">
+            <mat-toolbar>
+              <span class="center-text">What are your favorite things?</span>
+            </mat-toolbar>
+
+            <mat-divider class="divider"></mat-divider>
+
+            <div class="input-container">
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>Drinks</mat-label>
+                <textarea matInput rows="3" placeholder="Cola" formControlName="faveDrink"></textarea>
+              </mat-form-field>
+
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>Snacks</mat-label>
+                <textarea matInput rows="3" placeholder="Your goals" formControlName="faveSnacks"></textarea>
+              </mat-form-field>
+
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>People in your life, relationship</mat-label>
+                <textarea matInput rows="3" placeholder="Mom, dad, etc..." formControlName="favePeople"></textarea>
+              </mat-form-field>
+            </div>
+          </mat-tab>
+
+          <!-- tab 3 -->
+          <mat-tab label="Goals">
+            <mat-toolbar>
+              <span class="center-text">What do you want to do in life?</span>
+            </mat-toolbar>
+
+            <mat-divider class="divider"></mat-divider>
+
+            <div class="input-container">
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>What are your short term goals?</mat-label>
+                <textarea matInput rows="5" placeholder="Your goals" formControlName="shortGoals"></textarea>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="input-prompt" appearance="fill">
+                <mat-label>What are your long term goals?</mat-label>
+                <textarea matInput rows="5" placeholder="Your goals" formControlName="longGoals"></textarea>
+              </mat-form-field>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </form>
+
+    <mat-divider class="divider"></mat-divider>
+
+    <button 
+      mat-raised-button
+      color="primary"
+      (click)="onSubmit()"
+      >Submit
+    </button>  
+  </div>
+
+  <div *ngIf="isComplete" class="center-text">
+    <mat-toolbar>
+      <span class="center-text">About You</span>
+    </mat-toolbar>
+
+    <div *ngIf="submissionForm.value.email !== ''">
+      <span class="results-header">Email</span>
+      <br>
+      <span>{{submissionForm.value.email}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+
+    <div *ngIf="submissionForm.value.name !== ''">
+      <span class="results-header">Name</span>
+      <br>
+      <span>{{submissionForm.value.name}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+    
+    <div *ngIf="submissionForm.value.accomplishment !== ''">
+      <span class="results-header">Accomplishment</span>
+      <br>
+      <span>{{submissionForm.value.accomplishment}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+    
+    <div *ngIf="submissionForm.value.superpower !== ''">
+      <span class="results-header">Superpower</span>
+      <br>
+      <span>{{submissionForm.value.superpower}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+  
+    <div *ngIf="submissionForm.value.faveDrink !== ''">
+      <span class="results-header">Favorite Drink</span>
+      <br>
+      <span>{{submissionForm.value.faveDrink}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+
+    <div *ngIf="submissionForm.value.faveSnacks !== ''">
+      <span class="results-header">Favorite Snacks</span>
+      <br>
+      <span>{{submissionForm.value.faveSnacks}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+    
+    <div *ngIf="submissionForm.value.favePeople !== ''">
+      <span class="results-header">Favorite People</span>
+      <br>
+      <span>{{submissionForm.value.favePeople}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+    
+    <div *ngIf="submissionForm.value.shortGoals !== ''">
+      <span class="results-header">Short Term Goals</span>
+      <br>
+      <span>{{submissionForm.value.shortGoals}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+    
+    <div *ngIf="submissionForm.value.longGoals !== ''">
+      <span class="results-header">Short Term Goals</span>
+      <br>
+      <span>{{submissionForm.value.longGoals}}</span>
+      <mat-divider class="results-content"></mat-divider>
+    </div>
+
+    <span>Thank you for participating!</span>
+    <mat-divider class="results-content"></mat-divider>
+    <button 
+      mat-raised-button
+      color="primary"
+      (click)="onRetake()"
+      >Retake
+    </button>  
+  </div>
+</div>
