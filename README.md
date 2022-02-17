@@ -3,7 +3,8 @@ An angular app that display a web page for a survey.
 
 Uses material design components for the UI.
 
-There was supposed to be a login and signup screen at first, didn't get around to those in time. The prompt says to keep it under 4 hours and some Angular setup wasted some time unfortunately.
+This was done as a sample project for an interview, but I'm gonna make it public at this point since I took time to make it.
+There was supposed to be a login and signup screen at first, didn't get around to those in time.
 The survey portion should be complete minus a service call to a would-be API app, though.
 
 # Running
